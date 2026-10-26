@@ -2,10 +2,9 @@ import os
 import json
 from typing import List, Dict, Any
 
-# Import Anshuman's module
 from chat_parser import parse_chat_logs
+from telegram_parser import parse_telegram_export
 
-# Gracefully attempt to import Ankit's modules when present
 try:
     from network_parser import parse_network_telemetry
 except ImportError:
@@ -16,49 +15,76 @@ try:
 except ImportError:
     parse_crypto_transactions = None
 
+try:
+    from pcap_parser import parse_pcap
+except ImportError:
+    parse_pcap = None
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 OUTPUT_FILE = os.path.join(DATA_DIR, "parsed_evidence.json")
 
 
 def run_parser_pipeline() -> List[Dict[str, Any]]:
-    """
-    Master Ingestion Pipeline: Combines outputs from chat, network, and crypto modules.
-    """
-    chat_file = os.path.join(DATA_DIR, "chat_export.txt")
-    net_file = os.path.join(DATA_DIR, "network_telemetry.csv")
-    crypto_file = os.path.join(DATA_DIR, "crypto_transactions.csv")
+    """Combine evidence from all available evidence parsers."""
 
     all_parsed = []
 
-    # 1. Run Anshuman's Chat Parser
+    # 1. Discord-style chat export
+    chat_file = os.path.join(DATA_DIR, "chat_export.txt")
     chat_records = parse_chat_logs(chat_file)
     all_parsed.extend(chat_records)
-    print(f"[+] Anshuman (Chat Parser): Processed {len(chat_records)} chat records.")
+    print(f"[+] Chat parser: {len(chat_records)} records")
 
-    # 2. Run Ankit's Network Telemetry Parser (if merged)
+    # 2. Telegram JSON export
+    telegram_file = os.path.join(DATA_DIR, "telegram_export.json")
+    telegram_records = parse_telegram_export(telegram_file)
+    all_parsed.extend(telegram_records)
+    print(f"[+] Telegram parser: {len(telegram_records)} records")
+
+    # 3. Network telemetry / NetFlow-like CSV
+    net_file = os.path.join(DATA_DIR, "network_telemetry.csv")
+
     if parse_network_telemetry:
         net_records = parse_network_telemetry(net_file)
         all_parsed.extend(net_records)
-        print(f"[+] Ankit (Network Parser): Processed {len(net_records)} network records.")
+        print(f"[+] Network parser: {len(net_records)} records")
     else:
-        print("[!] Ankit's network_parser module is not yet merged.")
+        print("[!] Network parser is unavailable.")
 
-    # 3. Run Ankit's Crypto Ledger Parser (if merged)
+    # 4. PCAP packet capture
+    pcap_file = os.path.join(DATA_DIR, "test_traffic.pcap")
+
+    if parse_pcap:
+        if os.path.exists(pcap_file):
+            pcap_records = parse_pcap(pcap_file)
+            all_parsed.extend(pcap_records)
+            print(f"[+] PCAP parser: {len(pcap_records)} records")
+        else:
+            print(f"[!] PCAP file not found: {pcap_file}")
+    else:
+        print("[!] PCAP parser is unavailable.")
+
+    # 5. Cryptocurrency transaction CSV
+    crypto_file = os.path.join(DATA_DIR, "crypto_transactions.csv")
+
     if parse_crypto_transactions:
         crypto_records = parse_crypto_transactions(crypto_file)
         all_parsed.extend(crypto_records)
-        print(f"[+] Ankit (Crypto Parser): Processed {len(crypto_records)} crypto records.")
+        print(f"[+] Crypto parser: {len(crypto_records)} records")
     else:
-        print("[!] Ankit's crypto_parser module is not yet merged.")
+        print("[!] Crypto parser is unavailable.")
 
-    # Save output to standardized evidence JSON schema
+    # Save the combined standardized evidence records
     os.makedirs(DATA_DIR, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_parsed, f, indent=2)
 
-    print(f"[PASS] Pipeline complete. Total evidence records in output: {len(all_parsed)}")
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
+        json.dump(all_parsed, file, indent=2, ensure_ascii=False)
+
+    print(f"\n[PASS] Pipeline complete: {len(all_parsed)} total records")
     print(f"[PASS] Standardized evidence saved to: {OUTPUT_FILE}")
+
     return all_parsed
 
 

@@ -2,67 +2,258 @@
   {
     "evidence_id": "EV-CHAT-0001",
     "source_type": "chat",
-    "source_format": "raw_text",
-    "timestamp": "2026-10-26T05:37:29.822619+00:00",
+    "source_format": "discord",
+    "timestamp": "2026-03-10T14:15:22+00:00",
     "raw_content": "[2026-03-10T14:15:22Z] [CHANNEL: #syndicate-ops] @DarkKni9ht: Target environment exfiltration complete. Sent 100MB archive to 203.0.113.88 over HTTPS.",
     "metadata": {
-      "sender": "unknown",
-      "platform": "generic"
+      "sender": "DarkKni9ht",
+      "message_body": "Target environment exfiltration complete. Sent 100MB archive to 203.0.113.88 over HTTPS.",
+      "platform": "discord",
+      "channel": "#syndicate-ops"
     }
   },
   {
     "evidence_id": "EV-CHAT-0002",
     "source_type": "chat",
-    "source_format": "raw_text",
-    "timestamp": "2026-10-26T05:37:29.822656+00:00",
+    "source_format": "discord",
+    "timestamp": "2026-03-10T14:18:05+00:00",
     "raw_content": "[2026-03-10T14:18:05Z] [CHANNEL: #syndicate-ops] @Viper_Sec: Understood. C2 command staging server running at 198.51.100.45:8443. Send victim decryption keys to viper_dev@protonmail.com.",
     "metadata": {
-      "sender": "unknown",
-      "platform": "generic"
+      "sender": "Viper_Sec",
+      "message_body": "Understood. C2 command staging server running at 198.51.100.45:8443. Send victim decryption keys to viper_dev@protonmail.com.",
+      "platform": "discord",
+      "channel": "#syndicate-ops"
     }
   },
   {
     "evidence_id": "EV-CHAT-0003",
     "source_type": "chat",
-    "source_format": "raw_text",
-    "timestamp": "2026-10-26T05:37:29.822661+00:00",
+    "source_format": "discord",
+    "timestamp": "2026-03-10T14:22:40+00:00",
     "raw_content": "[2026-03-10T14:22:40Z] [CHANNEL: #syndicate-ops] @DarkKni9ht: Demanding 2.5 BTC ransom payment to primary vault 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa.",
     "metadata": {
-      "sender": "unknown",
-      "platform": "generic"
+      "sender": "DarkKni9ht",
+      "message_body": "Demanding 2.5 BTC ransom payment to primary vault 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa.",
+      "platform": "discord",
+      "channel": "#syndicate-ops"
     }
   },
   {
     "evidence_id": "EV-CHAT-0004",
     "source_type": "chat",
-    "source_format": "raw_text",
-    "timestamp": "2026-10-26T05:37:29.822664+00:00",
+    "source_format": "discord",
+    "timestamp": "2026-03-10T14:30:12+00:00",
     "raw_content": "[2026-03-10T14:30:12Z] [CHANNEL: #syndicate-ops] @Phantom_X: Once victim pays BTC, auto-split 40% to cashout mixer wallet bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh immediately.",
     "metadata": {
-      "sender": "unknown",
-      "platform": "generic"
+      "sender": "Phantom_X",
+      "message_body": "Once victim pays BTC, auto-split 40% to cashout mixer wallet bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh immediately.",
+      "platform": "discord",
+      "channel": "#syndicate-ops"
     }
   },
   {
     "evidence_id": "EV-CHAT-0005",
     "source_type": "chat",
-    "source_format": "raw_text",
-    "timestamp": "2026-10-26T05:37:29.822667+00:00",
+    "source_format": "discord",
+    "timestamp": "2026-03-10T14:35:50+00:00",
     "raw_content": "[2026-03-10T14:35:50Z] [CHANNEL: #syndicate-ops] @DarkKni9ht: Backup ETH wallet active at 0x71C7656EC7ab88b098defB751B7401B5f6d8976F. Darknet portal mirror live at c2.shadow-vault.tech.",
     "metadata": {
-      "sender": "unknown",
-      "platform": "generic"
+      "sender": "DarkKni9ht",
+      "message_body": "Backup ETH wallet active at 0x71C7656EC7ab88b098defB751B7401B5f6d8976F. Darknet portal mirror live at c2.shadow-vault.tech.",
+      "platform": "discord",
+      "channel": "#syndicate-ops"
     }
   },
   {
     "evidence_id": "EV-CHAT-0006",
     "source_type": "chat",
-    "source_format": "raw_text",
-    "timestamp": "2026-10-26T05:37:29.822680+00:00",
+    "source_format": "discord",
+    "timestamp": "2026-03-10T14:40:01+00:00",
     "raw_content": "[2026-03-10T14:40:01Z] [CHANNEL: #syndicate-ops] @Viper_Sec: Hey team, grabbing coffee, back in 10 mins.",
     "metadata": {
-      "sender": "unknown",
-      "platform": "generic"
+      "sender": "Viper_Sec",
+      "message_body": "Hey team, grabbing coffee, back in 10 mins.",
+      "platform": "discord",
+      "channel": "#syndicate-ops"
+    }
+  },
+  {
+    "evidence_id": "EV-TELEGRAM-1",
+    "source_type": "chat",
+    "source_format": "telegram",
+    "timestamp": "2026-03-10T14:20:00+00:00",
+    "raw_content": "Suspicious connection detected from 203.0.113.88",
+    "metadata": {
+      "sender": "DarkKni9ht",
+      "platform": "telegram",
+      "chat_name": "Syndicate Operations",
+      "message_id": 1
+    }
+  },
+  {
+    "evidence_id": "EV-TELEGRAM-2",
+    "source_type": "chat",
+    "source_format": "telegram",
+    "timestamp": "2026-03-10T14:25:00+00:00",
+    "raw_content": "Review the server at 198.51.100.45:8443",
+    "metadata": {
+      "sender": "Viper_Sec",
+      "platform": "telegram",
+      "chat_name": "Syndicate Operations",
+      "message_id": 2
+    }
+  },
+  {
+    "evidence_id": "EV-TELEGRAM-3",
+    "source_type": "chat",
+    "source_format": "telegram",
+    "timestamp": "2026-03-10T14:30:00+00:00",
+    "raw_content": "Contact analyst@example.com about the incident",
+    "metadata": {
+      "sender": "DarkKni9ht",
+      "platform": "telegram",
+      "chat_name": "Syndicate Operations",
+      "message_id": 3
+    }
+  },
+  {
+    "evidence_id": "EV-NET-0001",
+    "source_type": "network",
+    "source_format": "netflow_telemetry",
+    "source_file": "network_telemetry.csv",
+    "source_row": 2,
+    "timestamp": "2026-03-10T14:12:00Z",
+    "raw_content": "10.0.4.112:49152 -> 203.0.113.88:443 (TCP)",
+    "metadata": {
+      "src_ip": "10.0.4.112",
+      "dst_ip": "203.0.113.88",
+      "src_port": 49152,
+      "dst_port": 443,
+      "protocol": "TCP",
+      "bytes_transferred": 104857600,
+      "flag": "EXFILTRATION"
+    }
+  },
+  {
+    "evidence_id": "EV-NET-0002",
+    "source_type": "network",
+    "source_format": "netflow_telemetry",
+    "source_file": "network_telemetry.csv",
+    "source_row": 3,
+    "timestamp": "2026-03-10T14:16:30Z",
+    "raw_content": "10.0.4.112:49158 -> 198.51.100.45:8443 (TCP)",
+    "metadata": {
+      "src_ip": "10.0.4.112",
+      "dst_ip": "198.51.100.45",
+      "src_port": 49158,
+      "dst_port": 8443,
+      "protocol": "TCP",
+      "bytes_transferred": 4096,
+      "flag": "C2_BEACON"
+    }
+  },
+  {
+    "evidence_id": "EV-NET-0003",
+    "source_type": "network",
+    "source_format": "netflow_telemetry",
+    "source_file": "network_telemetry.csv",
+    "source_row": 4,
+    "timestamp": "2026-03-10T14:20:00Z",
+    "raw_content": "198.51.100.45:8443 -> 10.0.4.112:49160 (TCP)",
+    "metadata": {
+      "src_ip": "198.51.100.45",
+      "dst_ip": "10.0.4.112",
+      "src_port": 8443,
+      "dst_port": 49160,
+      "protocol": "TCP",
+      "bytes_transferred": 2048,
+      "flag": "C2_COMMAND"
+    }
+  },
+  {
+    "evidence_id": "EV-NET-0004",
+    "source_type": "network",
+    "source_format": "netflow_telemetry",
+    "source_file": "network_telemetry.csv",
+    "source_row": 5,
+    "timestamp": "2026-03-10T14:40:15Z",
+    "raw_content": "198.51.100.45:53 -> 8.8.8.8:53 (UDP)",
+    "metadata": {
+      "src_ip": "198.51.100.45",
+      "dst_ip": "8.8.8.8",
+      "src_port": 53,
+      "dst_port": 53,
+      "protocol": "UDP",
+      "bytes_transferred": 512,
+      "flag": "DNS_QUERY"
+    }
+  },
+  {
+    "evidence_id": "EV-PCAP-0001",
+    "source_type": "network",
+    "source_format": "pcap",
+    "source_file": "test_traffic.pcap",
+    "source_row": 1,
+    "timestamp": "2026-10-26T14:25:56.816703+00:00",
+    "raw_content": "Ether / IP / TCP 192.0.2.10:49152 > 198.51.100.20:https S",
+    "metadata": {
+      "src_ip": "192.0.2.10",
+      "dst_ip": "198.51.100.20",
+      "src_port": 49152,
+      "dst_port": 443,
+      "protocol": "TCP",
+      "packet_length": 54
+    }
+  },
+  {
+    "evidence_id": "EV-PCAP-0002",
+    "source_type": "network",
+    "source_format": "pcap",
+    "source_file": "test_traffic.pcap",
+    "source_row": 2,
+    "timestamp": "2026-10-26T14:25:56.816703+00:00",
+    "raw_content": "Ether / IP / UDP 192.0.2.11:53000 > 198.51.100.53:domain",
+    "metadata": {
+      "src_ip": "192.0.2.11",
+      "dst_ip": "198.51.100.53",
+      "src_port": 53000,
+      "dst_port": 53,
+      "protocol": "UDP",
+      "packet_length": 42
+    }
+  },
+  {
+    "evidence_id": "EV-PCAP-0003",
+    "source_type": "network",
+    "source_format": "pcap",
+    "source_file": "test_traffic.pcap",
+    "source_row": 3,
+    "timestamp": "2026-10-26T14:25:56.816703+00:00",
+    "raw_content": "Ether / IP / ICMP 192.0.2.12 > 198.51.100.30 echo-request 0",
+    "metadata": {
+      "src_ip": "192.0.2.12",
+      "dst_ip": "198.51.100.30",
+      "src_port": null,
+      "dst_port": null,
+      "protocol": "ICMP",
+      "packet_length": 42
+    }
+  },
+  {
+    "evidence_id": "EV-PCAP-0004",
+    "source_type": "network",
+    "source_format": "pcap",
+    "source_file": "test_traffic.pcap",
+    "source_row": 4,
+    "timestamp": "2026-10-26T14:25:56.817727+00:00",
+    "raw_content": "Ether / IP / UDP / DNS Qry b'example.test.'",
+    "metadata": {
+      "src_ip": "192.0.2.13",
+      "dst_ip": "198.51.100.53",
+      "src_port": 53001,
+      "dst_port": 53,
+      "protocol": "DNS",
+      "packet_length": 72
     }
   }
 ]

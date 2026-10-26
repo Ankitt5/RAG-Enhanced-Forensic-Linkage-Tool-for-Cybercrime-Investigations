@@ -1,0 +1,27 @@
+{
+"name": "Syndicate Operations",
+"type": "private_group",
+"messages": [
+{
+"id": 1,
+"type": "message",
+"date": "2026-03-10T14:20:00",
+"from": "DarkKni9ht",
+"text": "Suspicious connection detected from 203.0.113.88"
+},
+{
+"id": 2,
+"type": "message",
+"date": "2026-03-10T14:25:00",
+"from": "Viper_Sec",
+"text": "Review the server at 198.51.100.45:8443"
+},
+{
+"id": 3,
+"type": "message",
+"date": "2026-03-10T14:30:00",
+"from": "DarkKni9ht",
+"text": "Contact analyst@example.com about the incident"
+}
+]
+}
