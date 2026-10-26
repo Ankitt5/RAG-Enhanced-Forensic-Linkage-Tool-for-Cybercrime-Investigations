@@ -66,15 +66,6 @@ def run_parser_pipeline() -> List[Dict[str, Any]]:
     else:
         print("[!] PCAP parser is unavailable.")
 
-    # 5. Cryptocurrency transaction CSV
-    crypto_file = os.path.join(DATA_DIR, "crypto_transactions.csv")
-
-    if parse_crypto_transactions:
-        crypto_records = parse_crypto_transactions(crypto_file)
-        all_parsed.extend(crypto_records)
-        print(f"[+] Crypto parser: {len(crypto_records)} records")
-    else:
-        print("[!] Crypto parser is unavailable.")
 
     # Save the combined standardized evidence records
     os.makedirs(DATA_DIR, exist_ok=True)
